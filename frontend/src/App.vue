@@ -80,7 +80,7 @@ export default {
     //laden der Reports (Axios benutzen)
     const loadReports = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/reports');
+        const response = await axios.get('http://map-mevn-api.vercel.app/api/reports');
         response.data.forEach(report => {
           addMarker(report);
         });
@@ -111,7 +111,7 @@ export default {
             latitude: currentLocation.value.lat, //aktuelle Position latitude
             longitude: currentLocation.value.lng //aktuelle Position longitude
           };
-          const response = await axios.post('http://localhost:3001/api/reports', report);
+          const response = await axios.post('http://map-mevn-api.vercel.app/api/reports', report);
           addMarker(response.data); //Marker für die geladenen Reports erstellen 
           showModal.value = false; // der Wert des Fenster wird auf false gesetzt => schließen des Fensters
         } catch (error) { //Falls Fehler entstehen 
