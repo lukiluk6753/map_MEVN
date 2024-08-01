@@ -7,7 +7,13 @@ const app = express(); //erstellt eine Instance in Express
 const port = 3001; // gebe die Portnummer an 
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://map-mevn.vercel.app"],
+        methods: ["POST","GET"],
+        credentials: true
+    }
+));
 
 // MongoDB Atlas Verbindungs-URL
 const dbURI = 'mongodb+srv://lukiluk:3L9s71gI5LB3uNg9@manhatten.9gey7ij.mongodb.net/?retryWrites=true&w=majority&appName=Manhatten';
