@@ -9,7 +9,7 @@ const port = 3001; // gebe die Portnummer an
 app.use(bodyParser.json());
 app.use(cors(
     {
-        origin: ["https://map-mevn.vercel.app"],
+        origin: [""],
         methods: ["POST","GET"],
         credentials: true
     }
